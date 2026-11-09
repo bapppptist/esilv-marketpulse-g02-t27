@@ -25,16 +25,25 @@ def load_prices():
 def filter_prices(prices, ticker):
     return [row for row in prices if row["ticker"] == ticker]
 
+def get_first_close(prices):
+    return float(prices[0]["close"])
+
+def get_last_close(prices):
+    return float(prices[-1]["close"])
+
 
 def main():
     instruments = load_instruments()
-    prices = load_prices()
-
+    prices = load_prices()   
+    
     instrument = instruments["instrument"]
     benchmark = instruments["benchmark"]
 
     instrument_prices = filter_prices(prices, instrument["ticker"])
     benchmark_prices = filter_prices(prices, benchmark["ticker"])
+
+    print(get_first_close(instrument_prices), get_last_close(instrument_prices))
+    print(get_first_close(benchmark_prices), get_last_close(benchmark_prices))
 
     instrument_latest = instrument_prices[-1]
     benchmark_latest = benchmark_prices[-1]
