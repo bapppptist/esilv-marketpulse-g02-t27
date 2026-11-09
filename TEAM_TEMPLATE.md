@@ -13,8 +13,9 @@ Copy this file to `TEAM.md` in your team repository and complete it before start
 | Full name | GitHub username |
 |---|---|
 | Théophile Blaisot | @theoblaisot27 |
-| Student 2 | @github-user-2 |
-| Student 3 | @github-user-3 |
+| Baptiste Caris | @bapppptist |
+| Maxime Breuil | @maxime123456789517 |
+| Loïc Bagourd | @LOLO-dot-tech |
 
 Add a fourth row only if your team has four members.
 
