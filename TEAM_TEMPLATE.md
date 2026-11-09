@@ -5,14 +5,14 @@ Copy this file to `TEAM.md` in your team repository and complete it before start
 ## Course
 
 - Module: MESIFI472326 - Python, Git, Linux
-- TD Group: GXX
-- MarketPulse Team: TXX
+- TD Group: G02
+- MarketPulse Team: T27
 
 ## Members
 
 | Full name | GitHub username |
 |---|---|
-| Student 1 | @github-user-1 |
+| Théophile Blaisot | @theoblaisot27 |
 | Student 2 | @github-user-2 |
 | Student 3 | @github-user-3 |
 
