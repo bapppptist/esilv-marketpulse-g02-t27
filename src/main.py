@@ -70,6 +70,7 @@ def main():
     benchmark_latest = benchmark_prices[-1]
 
     print("=== MarketPulse ===")
+    print("Data source: Local CSV")
     print()
     display_market_summary(instrument, instrument_prices)
     display_market_summary(benchmark, benchmark_prices, show_currency=False)
