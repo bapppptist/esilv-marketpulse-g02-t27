@@ -1,0 +1,16 @@
+    1  git branch
+    2  git log --oneline -3
+    3  git branch --show-current
+    4  code src/main.py
+    5  python src/main.py
+    6  git add src/main.py
+    7  git commit -m "feat: display data source"
+    8  git diff
+    9  git status
+   10  git show HEAD
+   11  git push -u origin baptiste-caris
+   12  git pull --no-rebase --no-edit origin main
+   13  cat evidence/baptiste-caris
+   14  git rm evidence/baptiste-caris
+   15  mkdir evidence/baptiste-caris
+   16  history > evidence/baptiste-caris/historique-baptiste-caris.txt
