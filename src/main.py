@@ -45,31 +45,20 @@ def display_market_summary(asset, prices, show_currency=True):
 
 def main():
     instruments = load_instruments()
-    prices = load_prices()   
-    
+    prices = load_prices()
+
     instrument = instruments["instrument"]
     benchmark = instruments["benchmark"]
 
     instrument_prices = filter_prices(prices, instrument["ticker"])
     benchmark_prices = filter_prices(prices, benchmark["ticker"])
 
-    print(get_first_close(instrument_prices), get_last_close(instrument_prices))
-    print(get_first_close(benchmark_prices), get_last_close(benchmark_prices))
-
-    instrument_latest = instrument_prices[-1]
-    benchmark_latest = benchmark_prices[-1]
-
     print("=== MarketPulse ===")
     print()
     display_market_summary(instrument, instrument_prices)
     display_market_summary(benchmark, benchmark_prices, show_currency=False)
-    print()
     print(f"Period: {LOOKBACK_LABEL}")
     print(f"Interval: {INTERVAL_LABEL}")
-    print()
-    print("Observations")
-    print(f"{instrument['ticker']}: {len(instrument_prices)}")
-    print(f"{benchmark['ticker']}: {len(benchmark_prices)}")
 
 
 if __name__ == "__main__":
