@@ -33,6 +33,7 @@ def get_last_close(prices):
 
 def display_market_summary(asset, prices, show_currency=True):
     print(asset["ticker"], "-", asset["name"])
+    print("Market:", asset["market"])
     print("Observations:", len(prices))
     if show_currency:
         print("First close:", get_first_close(prices), asset["currency"])
