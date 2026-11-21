@@ -41,6 +41,7 @@ def get_last_date(prices):
 
 def display_market_summary(asset, prices, show_currency=True):
     print(asset["ticker"], "-", asset["name"])
+    print("Market:", asset["market"])
     print("Observations:", len(prices))
     print("First date:", get_first_date(prices))
     print("Last date:", get_last_date(prices))
