@@ -189,6 +189,7 @@ Start from an up-to-date `main`:
 ```bash
 git switch main
 git fetch origin
+git pull
 git status
 ```
 
