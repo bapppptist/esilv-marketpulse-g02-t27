@@ -14,3 +14,93 @@
    14  git rm evidence/baptiste-caris
    15  mkdir evidence/baptiste-caris
    16  history > evidence/baptiste-caris/historique-baptiste-caris.txt
+===== Historique du 25/11 (TD7, TD8, checkpoints) =====
+    1  git switch main
+    2  git status
+    3  git pull --ff-only origin main
+    4  ls notebooks
+    5  git switch -c feature/analytics
+    6  mkdir -p notebooks
+    7  curl -L -o notebooks/01_analytics.ipynb https://raw.githubusercontent.com/learn-moore/esilv-marketpulse-starter/main/notebooks/01_analytics.ipynb
+    8  code src/analytics.py
+    9  python3 -c "import src.analytics; print('Analytics OK')"
+   10  python3 -c "import csv; from src import analytics as a; r=list(csv.DictReader(open('data/sample/prices.csv'))); x,y=a.align_series([p for p in r if p['ticker']=='AAPL'],[p for p in r if p['ticker']=='SP500']); print(round(a.calculate_period_return(x),2), round(a.calculate_period_return(y),2))"
+   11  git status
+   12  git add src/analytics.py
+   13  git status
+   14  git commit -m "feat(analytics): implement quantitative indicators"
+   15  git push -u origin HEAD
+   16  git switch main
+   17  git branch -m feature/analytics brouillon/analytics-baptiste
+   18  git fetch origin
+   19  git switch feature/analytics
+   20  git log --oneline -3
+   21  ls src
+   22  git show --stat HEAD
+   23  cat src/analytics.py
+   24  cat tests/validate_analytics.py
+   25  python3 tests/validate_analytics.py
+   26  python3 -c "import csv; from src import analytics as a; r=list(csv.DictReader(open('data/sample/prices.csv'))); x,y=a.align_series([p for p in r if p['ticker']=='AAPL'],[p for p in r if p['ticker']=='SP500']); print(round(a.calculate_period_return(x),2), round(a.calculate_period_return(y),2))"
+   27  python3 src/main.py
+   28  git switch main
+   29  git pull
+   30  git log --oneline -3
+   31  python3 tests/validate_analytics.py
+   32  python3 src/main.py
+   33  curl -L -o notebooks/02_yahoo_provider.ipynb https://raw.githubusercontent.com/learn-moore/esilv-marketpulse-starter/main/notebooks/02_yahoo_provider.ipynb
+   34  pip install yfinance
+   35  cat docs/04_CHECKPOINTS_AND_EVIDENCE.md
+   36  [200~python3 src/main.py~
+   37  python3 src/main.py
+   38  git switch main
+   39  git pull
+   40  git switch -c evidence/checkpoint-b-bapppptist
+   41  mkdir -p evidence/checkpoint-b/bapppptist
+   42  mkdir -p evidence/checkpoint-a/bapppptist
+   43  git restore evidence/baptiste-caris
+   44  ls evidence/checkpoint-a/bapppptist evidence/checkpoint-b/bapppptist
+   45  mv evidence/checkpoint-a/01_terminal_python.png.png evidence/checkpoint-a/bapppptist/01_terminal_python.png
+   46  mv evidence/checkpoint-a/02_git_status_log.png.png evidence/checkpoint-a/bapppptist/02_git_status_log.png
+   47  mv evidence/checkpoint-a/03_branch_merge.png.png evidence/checkpoint-a/bapppptist/03_branch_merge.png
+   48  mv evidence/checkpoint-b/01_pull_request.png.png evidence/checkpoint-b/bapppptist/01_pull_request.png
+   49  mv "evidence/checkpoint-b/02_code_review.png (2).png" evidence/checkpoint-b/bapppptist/02_code_review.png
+   50  mv evidence/checkpoint-b/03_yahoo_market_data.png.png evidence/checkpoint-b/bapppptist/03_yahoo_market_data.png
+   51  mv evidence/checkpoint-b/04_instrument_benchmark.png.png evidence/checkpoint-b/bapppptist/04_instrument_benchmark.png
+   52  ls -R evidence/checkpoint-a evidence/checkpoint-b
+   53  code evidence/checkpoint-a/bapppptist/README.md
+   54  code evidence/checkpoint-b/bapppptist/README.md
+   55  git add evidence/checkpoint-a/bapppptist evidence/checkpoint-b/bapppptist
+   56  git status
+   57  git commit -m "docs(evidence): add checkpoint A and B evidence for bapppptist"
+   58  git push -u origin HEAD
+   59  git switch main
+   60  git pull
+   61  grep -n "def " src/providers/yahoo_provider.py
+   62  git pull
+   63  grep -n "def " src/providers/yahoo_provider.py
+   64  git pull
+   65  grep -n "def " src/providers/yahoo_provider.py
+   66  git pull
+   67  git log --oneline -5
+   68  grep -rn "fetch_prices_for_ticker" --include="*.py" --include="*.ipynb" .
+   69  git pull
+   70  grep -rn "fetch_prices_for_ticker" --include="*.py" --include="*.ipynb" .
+   71  grep -n "def " src/providers/yahoo_provider.py
+   72  git pull
+   73  grep -n "def " src/providers/yahoo_provider.py
+   74  git pull
+   75  grep -n "def " src/providers/yahoo_provider.py
+   76  git fetch
+   77  git branch -r
+   78  git pull
+   79  grep -n "def " src/providers/yahoo_provider.py
+   80  git status
+   81  ls evidence/checkpoint-a/bapppptist/
+   82  git switch baptiste-caris
+   83  history > evidence/baptiste-caris/historique-baptiste-caris.txt
+   84  wc -l evidence/baptiste-caris/historique-baptiste-caris.txt
+   85  wc -l ~/.bash_history
+   86  head -20 evidence/baptiste-caris/historique-baptiste-caris.txt
+   87  git restore evidence/baptiste-caris/historique-baptiste-caris.txt
+   88  echo "===== Historique du 25/11 (TD7, TD8, checkpoints) =====" >> evidence/baptiste-caris/historique-baptiste-caris.txt
+   89  history >> evidence/baptiste-caris/historique-baptiste-caris.txt
