@@ -64,9 +64,6 @@ def main():
     instrument_prices = filter_prices(prices, instrument["ticker"])
     benchmark_prices = filter_prices(prices, benchmark["ticker"])
 
-    print(get_first_close(instrument_prices), get_last_close(instrument_prices))
-    print(get_first_close(benchmark_prices), get_last_close(benchmark_prices))
-
     instrument_latest = instrument_prices[-1]
     benchmark_latest = benchmark_prices[-1]
 
