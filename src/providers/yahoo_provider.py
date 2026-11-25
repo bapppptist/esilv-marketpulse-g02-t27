@@ -36,3 +36,17 @@ def fetch_yahoo_prices(symbol, canonical_ticker, period="1mo", interval="1d"):
             "volume": int(row["Volume"]),
         })
     return rows
+
+
+def fetch_prices_for_ticker(ticker, period="1mo", interval="1d"):
+    """Fetch canonical observations for a MarketPulse ticker (e.g. "AAPL", "SP500").
+
+    The Yahoo Finance symbol is resolved with YAHOO_SYMBOL_MAPPING.
+    """
+    if ticker not in YAHOO_SYMBOL_MAPPING:
+        raise ValueError(
+            f"Unknown MarketPulse ticker: {ticker}. "
+            f"Expected one of {list(YAHOO_SYMBOL_MAPPING)}."
+        )
+    symbol = YAHOO_SYMBOL_MAPPING[ticker]
+    return fetch_yahoo_prices(symbol, ticker, period=period, interval=interval)
