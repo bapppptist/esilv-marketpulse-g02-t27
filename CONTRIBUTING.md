@@ -181,3 +181,31 @@ financial market data
 ```
 
 Do not add unnecessary infrastructure or frameworks unless requested by the instructor.
+
+## 10. Command quick reference
+
+Start from an up-to-date `main`:
+
+```bash
+git switch main
+git fetch origin
+git pull
+git status
+```
+
+Create a branch, commit and push it to the team repository:
+
+```bash
+git switch -c feature/<short-description>
+git add <file>
+git commit -m "feat: <meaningful message>"
+git push -u origin feature/<short-description>
+```
+
+Then open a Pull Request on GitHub:
+
+- base repository: the team repository (not the instructor repository);
+- base branch: `main`;
+- compare branch: your feature branch.
+
+Do not merge your own Pull Request before the review.
