@@ -1,4 +1,4 @@
-ls docs/# Bloomberg Field Mapping
+# Bloomberg Field Mapping
 
 Ce document décrit comment le fournisseur Bloomberg de MarketPulse (`src/providers/bloomberg_provider.py`, TD10) transforme les données Bloomberg au format canonique commun à tous les fournisseurs. Il doit suffire pour implémenter le mapping sans ambiguïté.
 
